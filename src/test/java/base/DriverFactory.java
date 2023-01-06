@@ -4,8 +4,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 import stepDefinitions.pages.Main;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class DriverFactory {
 
@@ -14,11 +20,15 @@ public class DriverFactory {
     public static Main main;
 
     @Before
-    public WebDriver getDriver() {
+    public WebDriver getDriver() throws MalformedURLException {
 
-        // driver and browser set up
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        // local execution
+        //WebDriverManager.chromedriver().setup();
+        //driver = new ChromeDriver();
+
+        ChromeOptions opt = new ChromeOptions();
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), opt);
+
 
         // config default browser
         driver.manage().window().maximize();

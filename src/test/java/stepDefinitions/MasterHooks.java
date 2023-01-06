@@ -4,10 +4,12 @@ import base.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
+import java.net.MalformedURLException;
+
 public class MasterHooks extends DriverFactory {
 
     @Before
-    public void setup() { driver = getDriver(); }
+    public void setup() throws MalformedURLException { driver = getDriver(); }
 
     @After
     public void tearDown() {
