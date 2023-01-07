@@ -38,8 +38,7 @@ jobs:
         if: ${{ always() }}
         with:
           name: Test Reports
-          path: | 
-            ./target/cucumber.html
+          path: ./target/cucumber.html
         
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v1
