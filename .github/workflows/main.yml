@@ -48,7 +48,7 @@ jobs:
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./target
+          PUBLISH_DIR: ./target/cucumber/
 
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v1
