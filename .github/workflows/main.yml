@@ -34,7 +34,7 @@ jobs:
         if: ${{ success() }}
         with:
           name: html-report
-          path: ./target/report.html
+          path: ./target/cucumber.html
       
       - name: Download HTML report artifact
         uses: actions/download-artifact@v2
