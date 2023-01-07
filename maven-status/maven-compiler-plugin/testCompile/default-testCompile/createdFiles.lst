@@ -1,6 +1,0 @@
-runner/MainRunner.class
-stepDefinitions/steps/MainSteps.class
-stepDefinitions/MasterHooks.class
-base/BaseMethods.class
-stepDefinitions/pages/Main.class
-base/DriverFactory.class
