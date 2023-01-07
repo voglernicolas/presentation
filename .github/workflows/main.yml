@@ -32,13 +32,18 @@ jobs:
         env:
           SELENIUM_HUB_HOST: 'localhost'
         run: mvn clean test -Dcucumber.filter.tags="@smoke"
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
         
-      - name: Upload artifact report
-        uses: actions/upload-artifact@v2
-        if: ${{ always() }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: Test Reports
           path: ./target/cucumber.html
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
         
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v1
