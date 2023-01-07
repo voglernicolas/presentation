@@ -41,7 +41,7 @@ jobs:
           name: cucumber-report
           
       - name: Deploy to GitHub Pages
-        run: mv cucumber-report/* public/
+        run: mv cucumber-report public/
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
