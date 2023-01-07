@@ -42,10 +42,13 @@ jobs:
         with:
           name: html-report
           
-      - name: Deploy to GitHub Pages
-        run: cp /home/runner/work/presentation/presentation/html-report/* public/
+      - name: Deploy report to Github Pages
+        if: ${{ success() }}
+        uses: peaceiris/actions-gh-pages@v2
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./target
 
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v1
