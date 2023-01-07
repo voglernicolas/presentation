@@ -7,14 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: pull project on runner
-      uses: actions/checkout@v3
+      - name: pull project on runner
+        uses: actions/checkout@v3
 
-    - name: java set up
-    - uses: actions/setup-java@v3
-      with:
-        distribution: 'temurin'
-        java-version: '17'
+      - name: java set up
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
-    - name: Run tests
-      run: mvn clean test -Dcucumber.filter.tags="@smoke"
+      - name: Run tests
+        run: mvn clean test -Dcucumber.filter.tags="@smoke"
