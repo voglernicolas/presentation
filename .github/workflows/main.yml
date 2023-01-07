@@ -39,16 +39,6 @@ jobs:
         with:
           name: Test Reports
           path: ./target/cucumber.html
-      
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./target/cucumber.html
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
         
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v1
