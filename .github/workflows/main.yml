@@ -43,7 +43,7 @@ jobs:
           name: html-report
           
       - name: Deploy to GitHub Pages
-        run: cp html-report/* public/
+        run: cp /home/runner/work/presentation/presentation/html-report/* public/
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
