@@ -20,9 +20,25 @@
 - Se genera un reporte al finalizar la ejecución desde Github Actions
 - El reporte se encuentra alojado en https://voglernicolas.github.io/presentation/cucumber.html
 
+## Ejecución y reporte en JMeter
+
+- Se utiliza la GUI de JMeter para:
+  * crear un api test para los request entre paginas.
+  * Simular una carga de: 
+    * 5 usuarios simultaneos.
+    * ramp up de 3 min.
+    * ramp up step de 5.
+    * hold de usuarios por 1 min.
+
+![Jenkins_ejecucion](https://gcdnb.pbrd.co/images/5oySbHssmrf0.gif?o=1)
+- Los reportes se generan en ambiente local.
+
 
 ## Pre-requisitos y Ejecución local
 - Java (17) y Maven 
 - Requiere sacar comentarios de la linea 27 y 28 en `base/DriverFactory.java` y comentar linea 30 y 31.
 - Para ejecutar las pruebas, ejecuta el siguiente comando en la raíz del proyecto:
 `mvn clean test`
+
+
+
