@@ -36,7 +36,6 @@ public class SelectPlan extends BaseMethods {
     public void selectNewPlan(String plan) throws Exception {
         WebElement element = driver.findElement(By.xpath("//span[contains(.,'" + plan + "')]"));
         waitAndClickElement(element);
-        Thread.sleep(5000);
     }
 
     public void clickSiguiente() throws Exception {
