@@ -23,5 +23,6 @@
 
 ## Pre-requisitos y Ejecución local
 - Java (17) y Maven 
+- Requiere sacar comentarios de la linea 27 y 28 en `base/DriverFactory.java` y comentar linea 30 y 31.
 - Para ejecutar las pruebas, ejecuta el siguiente comando en la raíz del proyecto:
 `mvn clean test`
