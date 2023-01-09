@@ -29,10 +29,18 @@ public class BaseMethods extends DriverFactory{
             list.sendKeys(textToSearch);
             list.sendKeys(Keys.ENTER);
         } catch (Exception e) {
-            System.out.println("No fue posible seleccioar en dropdown");
+            System.out.println("No fue posible seleccionar el dropdown");
         }
     }
 
-
+    public void sendKeysToWebElement(WebElement element, String textToSend) throws Exception {
+        try {
+            this.wait.until(ExpectedConditions.visibilityOf(element));
+            element.clear();
+            element.sendKeys(textToSend);
+        } catch (Exception e) {
+            System.out.println("No fue posible la accion sendkeys");
+        }
+    }
 
 }
